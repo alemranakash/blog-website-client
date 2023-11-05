@@ -50,34 +50,6 @@ const AddBlogs = () => {
        
      });
 
-
-
-
-
-
-//      fetch('http://localhost:5000/allBlogs', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(addBlogs)
-//   })
-//   .then(res => res.json())
-//   .then(data=>{
-//     console.log(data)
-
-//     //after successful added we can show a sweetAlert
-
-// if(data.insertedId){
-//   swal({
-//         title: 'Blog Added',
-//         text: 'Blog added successfully',
-//         icon:'success'
-//       })
-//   }
-//   })
-
-  
     }
 
 

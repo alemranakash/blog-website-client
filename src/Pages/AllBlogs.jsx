@@ -1,8 +1,9 @@
-import  { useState } from 'react';
+import  { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import swal from 'sweetalert';
 import axios from 'axios';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const fetchAllBlogs = async () => {
   try {
@@ -14,6 +15,13 @@ const fetchAllBlogs = async () => {
 };
 
 const AllBlogs = () => {
+
+  const {user}= useContext(AuthContext)
+  // console.log(user);
+
+  const email = user?.email
+  console.log(email);
+
   const navigate = useNavigate();
   const { data, error, isLoading } = useQuery({
     queryKey: 'allBlogs',
@@ -38,7 +46,7 @@ const AllBlogs = () => {
 
   const handleAddToWishlist = (blog) => {
     const { title, image, short_description, category } = blog;
-    const wishlistBlogs = { title, image, short_description, category };
+    const wishlistBlogs = { title, email, image, short_description, category };
 
     axios
       .post('http://localhost:5000/wishList', wishlistBlogs)

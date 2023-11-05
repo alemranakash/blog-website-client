@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import swal from 'sweetalert';
+import axios from 'axios';
 
 
 const AddBlogs = () => {
 
     const { user } = useContext(AuthContext);
-    const userEmail = user.email;
+    const blogOwnerEmail = user.email;
+    const blogOwnerPhoto = user.photoURL;
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -18,9 +21,63 @@ const AddBlogs = () => {
         const long_description = e.target.long_description.value;
         const createdAt = new Date();
       
-     const addBlogs = {image, title, category, short_description, long_description, createdAt, userEmail};
+     const addBlogs = {image, title, category, short_description, long_description, createdAt, blogOwnerEmail: blogOwnerEmail, blogOwnerPhoto: blogOwnerPhoto};
      console.log(addBlogs);
 
+
+
+
+     axios
+     .post('http://localhost:5000/allBlogs', addBlogs, {
+       headers: {
+         'Content-Type': 'application/json',
+       },
+     })
+     .then((response) => {
+       console.log(response.data);
+ 
+      
+       if (response.data.insertedId) {
+         swal({
+           title: 'Blog Added',
+           text: 'Blog added successfully',
+           icon: 'success',
+         });
+       }
+     })
+     .catch((error) => {
+       console.error(error);
+       
+     });
+
+
+
+
+
+
+//      fetch('http://localhost:5000/allBlogs', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(addBlogs)
+//   })
+//   .then(res => res.json())
+//   .then(data=>{
+//     console.log(data)
+
+//     //after successful added we can show a sweetAlert
+
+// if(data.insertedId){
+//   swal({
+//         title: 'Blog Added',
+//         text: 'Blog added successfully',
+//         icon:'success'
+//       })
+//   }
+//   })
+
+  
     }
 
 

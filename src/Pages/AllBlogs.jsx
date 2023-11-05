@@ -1,14 +1,17 @@
-import { useState } from 'react'; 
+import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import swal from 'sweetalert';
+import axios from 'axios';
 
 const fetchAllBlogs = async () => {
-    const response = await fetch('http://localhost:5000/allBlogs');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  };
+  try {
+    const response = await axios.get('http://localhost:5000/allBlogs');
+    return response.data;
+  } catch (error) {
+    throw new Error('Network response was not ok');
+  }
+};
 
 const AllBlogs = () => {
   const navigate = useNavigate();
@@ -17,8 +20,8 @@ const AllBlogs = () => {
     queryFn: fetchAllBlogs,
   });
 
-  const [selectedCategory, setSelectedCategory] = useState(''); 
-  const [searchTerm, setSearchTerm] = useState(''); 
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -28,19 +31,40 @@ const AllBlogs = () => {
   }
 
   const filteredBlogs = data.filter((blog) => {
-  
     const categoryMatch = !selectedCategory || blog.category === selectedCategory;
-
-   
     const titleMatch = !searchTerm || blog.title.toLowerCase().includes(searchTerm.toLowerCase());
-
     return categoryMatch && titleMatch;
   });
 
+  const handleAddToWishlist = (blog) => {
+    const { title, image, short_description, category } = blog;
+    const wishlistBlogs = { title, image, short_description, category };
+
+    axios
+      .post('http://localhost:5000/wishList', wishlistBlogs)
+      .then((response) => {
+        if (response.data.insertedId) {
+          swal({
+            title: 'Blog Added',
+            text: 'Blog added to WishList successfully',
+            icon: 'success',
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        swal({
+          title: 'Error',
+          text: 'Error adding the blog to the WishList',
+          icon: 'error',
+        });
+      });
+  };
+
   return (
     <div>
-      <h1 className='text-4xl text-center'>This is All Blogs</h1>
-      <div className='flex items-center justify-between'>
+      <h1 className="text-4xl text-center">This is All Blogs</h1>
+      <div className="flex items-center justify-between">
         <div className="mb-4 flex justify-center items-center gap-5">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">
             Filter by Category:
@@ -83,12 +107,12 @@ const AllBlogs = () => {
             <div key={_id}>
               <div className="card lg:card-side bg-blue-200 shadow-xl">
                 <figure className="p-4">
-                  <img className='rounded-lg w-full h-full' src={image} alt="Blog" />
+                  <img className="rounded-lg w-full h-full" src={image} alt="Blog" />
                 </figure>
                 <div className="card-body">
-                  <h2 className='font-bold text-xl text-blue-700'>{title}</h2>
-                  <h2 className='border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl'>{category}</h2>
-                  <h2 className=''>{short_description}</h2>
+                  <h2 className="font-bold text-xl text-blue-700">{title}</h2>
+                  <h2 className="border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl">{category}</h2>
+                  <h2 className="">{short_description}</h2>
 
                   <div className="card-actions justify-end">
                     <div className="flex justify-center items-center gap-5">
@@ -97,6 +121,14 @@ const AllBlogs = () => {
                         onClick={() => navigate(`/blogDetails/${_id}`)}
                       >
                         Details
+                      </button>
+                    </div>
+                    <div className="flex justify-center items-center gap-5">
+                      <button
+                        className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                        onClick={() => handleAddToWishlist(blog)}
+                      >
+                        Wishlist
                       </button>
                     </div>
                   </div>

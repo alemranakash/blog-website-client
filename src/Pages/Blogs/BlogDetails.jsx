@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import swal from 'sweetalert';
@@ -8,7 +8,7 @@ import axios from 'axios';
 const BlogDetails = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user.email;
-  const blogs = useLoaderData();
+  const blogs = useLoaderData(["featuredBlogs"]);
   const [blogDetails, setBlogDetails] = useState(blogs);
   const { id } = useParams();
   const [comments, setComments] = useState([]); // Step 1: Create a comments state variable
@@ -88,9 +88,9 @@ const BlogDetails = () => {
           <h2>{short_description}</h2>
           <p>{long_description}</p>
           {isOwner && (
-            <button className="btn btn-secondary">
-              Update
-            </button>
+           <Link to={`/updateBlogs/${_id}`}>
+           <button className="btn">Update</button>
+           </Link>
           )}
         </div>
       </div>

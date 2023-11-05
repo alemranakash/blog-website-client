@@ -25,6 +25,7 @@ const FeaturedBlogs = () => {
   }
 
 //   console.log(featuredBlogs);
+console.log("Featured Blogs:", featuredBlogs);
 
 
   const sortedFeaturedBlogs = featuredBlogs.sort((a, b) => {
@@ -40,6 +41,7 @@ const FeaturedBlogs = () => {
     blogTitle: blog.title,
     blogOwner: blog.blogOwnerName, 
     profilePicture: blog.blogOwnerPhoto, 
+    length: blog.long_description.length
   }));
 
 

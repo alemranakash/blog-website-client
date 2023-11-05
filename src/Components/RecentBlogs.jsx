@@ -1,5 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import swal from 'sweetalert';
+import axios from 'axios';
+
+
 
 const fetchAllBlogs = async () => {
   const response = await fetch('http://localhost:5000/recentBlogs?sortBy=createdAt:asc&limit=6');
@@ -23,6 +27,39 @@ const RecentBlogs = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+
+
+  const handleAddToWishlist = (blog) => {
+    const {title, image, short_description, category}= blog;
+    
+
+    const wishlistBlogs = {title, image, short_description, category};
+    console.log(wishlistBlogs);
+
+
+    axios.post('http://localhost:5000/wishList', wishlistBlogs)
+      .then((response) => {
+        if (response.data.insertedId) {
+          swal({
+            title: 'Blog Added',
+            text: 'Blog added to WishList successfully',
+            icon: 'success',
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        swal({
+          title: 'Error',
+          text: 'Error adding the blog to the WishList',
+          icon: 'error',
+        });
+      });
+
+
+  };
+
+
 
   return (
     <div>
@@ -50,6 +87,16 @@ const RecentBlogs = () => {
                         >
                           Details
                         </button>
+                      </div>
+
+
+                      <div className="flex justify-center items-center gap-5">
+                      <button
+  className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+  onClick={() => handleAddToWishlist(blog)}
+>
+  Wishlist
+</button>
                       </div>
                     </div>
                   </div>

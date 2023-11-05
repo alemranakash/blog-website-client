@@ -9,6 +9,8 @@ const AddBlogs = () => {
     const { user } = useContext(AuthContext);
     const blogOwnerEmail = user.email;
     const blogOwnerPhoto = user.photoURL;
+    const blogOwnerName = user.displayName;
+    console.log(user);
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +23,7 @@ const AddBlogs = () => {
         const long_description = e.target.long_description.value;
         const createdAt = new Date();
       
-     const addBlogs = {image, title, category, short_description, long_description, createdAt, blogOwnerEmail: blogOwnerEmail, blogOwnerPhoto: blogOwnerPhoto};
+     const addBlogs = {image, title, category, short_description, long_description, createdAt, blogOwnerEmail: blogOwnerEmail, blogOwnerPhoto: blogOwnerPhoto, blogOwnerName: blogOwnerName};
      console.log(addBlogs);
 
 

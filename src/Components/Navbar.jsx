@@ -58,7 +58,7 @@ const Navbar = () => {
                         {user ? authenticatedNavLinks : normalNavLinks}
                     </ul>
                 </div>
-                <div className="navbar-end flex lg:gap-5">
+                <div className="navbar-end flex gap-5 lg:gap-5">
                     <div className="">
                         {
                             user ? <div className="flex lg:flex-row flex-col lg:gap-5  items-center">

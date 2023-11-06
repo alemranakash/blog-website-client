@@ -7,8 +7,7 @@ const Newsletter = () => {
   const handleSubscription = (e) => {
     e.preventDefault();
 
-    // Replace this with your API call or any other logic to handle the subscription
-    // In this example, we'll show a success message using SweetAlert
+   
     swal({
         title: 'Thank you',
         text: 'Thank you for subscribing to our newsletter',
@@ -17,7 +16,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center  mx-auto p-4 border border-blac rounded-lg shadow-lg mb-10" style={{ backgroundImage: 'url("https://i.ibb.co/pZVP6Qz/pexels-skylar-kang-6044235.jpg")', backgroundSize: 'cover' }}>
+    <div className="flex mt-10 flex-col lg:flex-row justify-center items-center  mx-auto p-4 border border-blac rounded-lg shadow-lg mb-10" style={{ backgroundImage: 'url("https://i.ibb.co/pZVP6Qz/pexels-skylar-kang-6044235.jpg")', backgroundSize: 'cover' }}>
         <img src="https://i.ibb.co/bB771Tx/3d-email-envelope-icon-maill-newsletter-illustration-with-glass-morphism-style-78434-215-removebg-pr.png" alt="" />
      <div>
      <h2 className="text-2xl text-white font-semibold mb-2">Subscribe to our Newsletter</h2>

@@ -11,7 +11,9 @@ const BlogDetails = () => {
   const blogs = useLoaderData(["featuredBlogs"]);
   const [blogDetails, setBlogDetails] = useState(blogs);
   const { id } = useParams();
-  const [comments, setComments] = useState([]); // Step 1: Create a comments state variable
+  const [comments, setComments] = useState([]); 
+
+  console.log(blogs);
 
   useEffect(() => {
     const findBlogDetails = blogs.find((blog) => blog._id === id);

@@ -32,7 +32,7 @@ console.log("Featured Blogs:", featuredBlogs);
     const aWordCount = a.long_description.split(" ").length;
     const bWordCount = b.long_description.split(" ").length;
 
-    return aWordCount - bWordCount;
+    return bWordCount - aWordCount;
   });
 
 

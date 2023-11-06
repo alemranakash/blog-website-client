@@ -27,7 +27,7 @@ const UpdateBlogs = () => {
 
     swal({
       title: 'Are you sure?',
-      text: "You won't be able to revert this!",
+      text: "Want to update this blog ?",
       icon: 'warning',
       buttons: true,
       dangerMode: true,

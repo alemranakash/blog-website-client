@@ -32,6 +32,12 @@ const Register = () => {
         swal("Oops!", "Password must contain at least one special character.", "error");
         return;
       }
+      if (!/\d/.test(password)) {
+        swal("Oops!", "Password must contain at least one numeric character.", "error");
+        return;
+    }
+
+    
         // * create user===========================
 createUser(email, password)
 .then(result=>{

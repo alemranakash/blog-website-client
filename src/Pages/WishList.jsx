@@ -92,7 +92,7 @@ const WishList = () => {
         <div>No data found.</div>
       ) : (
         filteredWishList.map((blog) => {
-          const { title, image, short_description, _id, email } = blog;
+          const { title, image, short_description, _id, detailsId, email } = blog;
           return (
             <div key={_id}>
               <div className="card lg:card-side bg-blue-200 shadow-xl">
@@ -110,7 +110,7 @@ const WishList = () => {
                     <div className="flex justify-center items-center gap-5">
                       <button
                         className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
-                        onClick={() => navigate(`/blogDetails/${_id}`)}
+                        onClick={() => navigate(`/blogDetails/${detailsId}`)}
                       >
                         Details
                       </button>

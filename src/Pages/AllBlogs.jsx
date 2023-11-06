@@ -45,8 +45,8 @@ const AllBlogs = () => {
   });
 
   const handleAddToWishlist = (blog) => {
-    const { title, image, short_description, category } = blog;
-    const wishlistBlogs = { title, email, image, short_description, category };
+    const {_id, title, image, short_description, category } = blog;
+    const wishlistBlogs = { title, email, image, short_description, category, detailsId: _id };
 
     axios
       .post('http://localhost:5000/wishList', wishlistBlogs)

@@ -1,3 +1,4 @@
+import Hero from "../Components/Hero";
 import Navbar from "../Components/Navbar";
 import Newsletter from "../Components/Newsletter";
 import RecentBlogs from "../Components/RecentBlogs";
@@ -7,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1>This is Home</h1>
+           <Hero></Hero>
             <RecentBlogs></RecentBlogs>
             <Newsletter></Newsletter>
         </div>

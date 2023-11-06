@@ -74,25 +74,28 @@ const RecentBlogs = () => {
   return (
     <div>
       <div>
-        <h1 className='text-4xl text-center'>This is Recent Blogs</h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <h1 className='text-4xl text-center my-20'>Recent Blogs</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
           {data.map((blog) => {
             const { title, image, short_description, category, _id, createdAt } = blog;
             return (
               <div key={_id}>
-                <div className="card lg:card-side bg-blue-200 shadow-xl">
-                  <figure className="p-4">
-                    <img className='rounded-lg w-full h-full' src={image} alt="Blog" />
-                  </figure>
+                <div className="card lg:card-side bg-slat-300 mb-10">
+                <div className="border-l-2 border-black">
+  
+</div>
+                  <img className='rounded-lg lg:w-1/2  bg' src={image} alt="Blog" />
+                
                   <div className="card-body">
-                    <h2 className='font-bold text-xl text-blue-700'>{title}</h2>
-                    <h2 className='border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl'>{category}</h2>
-                    <h2 className=''>{short_description}</h2>
+                    <h2 className='font-bold text-xl text-black'>{title}</h2>
                     <p className="text-gray-500 text-sm">{new Date(createdAt).toLocaleString()}</p>
-                    <div className="card-actions justify-end">
+                    <h2 className='border-l-2 border-r-2 border-black text-blue-500  w-fit px-2 '>{category}</h2>
+                    <h2 className='mb-5'>{short_description}</h2>
+                   
+                    <div className="card-actions">
                       <div className="flex justify-center items-center gap-5">
                         <button
-                          className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                          className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                           onClick={() => navigate(`/blogDetails/${_id}`)}
                         >
                           Details
@@ -102,7 +105,7 @@ const RecentBlogs = () => {
 
                       <div className="flex justify-center items-center gap-5">
                       <button
-  className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+  className="btn btn-sm rounded-md border-black  hover:bg-black hover:text-white bg-none text-black"
   onClick={() => handleAddToWishlist(blog)}
 >
   Wishlist

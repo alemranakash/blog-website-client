@@ -17,11 +17,13 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 border rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold mb-2">Subscribe to our Newsletter</h2>
+    <div className="flex flex-col lg:flex-row justify-center items-center  mx-auto p-4 border border-blac rounded-lg shadow-lg mb-10" style={{ backgroundImage: 'url("https://i.ibb.co/pZVP6Qz/pexels-skylar-kang-6044235.jpg")', backgroundSize: 'cover' }}>
+        <img src="https://i.ibb.co/bB771Tx/3d-email-envelope-icon-maill-newsletter-illustration-with-glass-morphism-style-78434-215-removebg-pr.png" alt="" />
+     <div>
+     <h2 className="text-2xl text-white font-semibold mb-2">Subscribe to our Newsletter</h2>
       <form onSubmit={handleSubscription}>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2" htmlFor="email">
+          <label className="block text-gray-300 text-sm font-medium mb-2" htmlFor="email">
             Email Address
           </label>
           <input
@@ -31,18 +33,19 @@ const Newsletter = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring focus:ring-indigo-200"
+            className="w-full px-4 py-2 border border-black rounded-lg shadow-sm focus:ring focus:ring-indigo-200"
           />
         </div>
         <div className="text-center">
           <button
             type="submit"
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-white hover:text-black"
           >
             Subscribe
           </button>
         </div>
       </form>
+     </div>
     </div>
   );
 };

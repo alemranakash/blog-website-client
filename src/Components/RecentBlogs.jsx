@@ -26,7 +26,7 @@ const RecentBlogs = () => {
 
   const navigate = useNavigate();
   const { data, error, isLoading } = useQuery({
-    queryKey: 'allBlogs',
+    queryKey: ['allBlogs'],
     queryFn: fetchAllBlogs,
   });
 

@@ -92,7 +92,7 @@ const WishList = () => {
         <div>No data found.</div>
       ) : (
         filteredWishList.map((blog) => {
-          const { title, image, short_description, _id, detailsId, email } = blog;
+          const { title, image, short_description, _id, detailsId } = blog;
           return (
             <div  key={_id}>
               <div className="card lg:card-side mb-20 shadow-lg">

@@ -65,8 +65,10 @@ const AddBlogs = () => {
         <div>
             <div className=''>
             <h1 className="text-center text-4xl my-10">Add Blog</h1>
-          <div className="max-w-md mx-auto">
-  <form onSubmit={handleFormSubmit} className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+   <div className="flex justify-center items-center my-10">
+    <img className="" src="https://i.ibb.co/87m17ZT/add-blog.png" alt="" />
+   <div className="shadow-2xl hover:shadow-purple-600 rounded-md w-1/2 mx-auto ">
+  <form onSubmit={handleFormSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
     
     {/* img */}
     <div className="mb-4">
@@ -74,7 +76,7 @@ const AddBlogs = () => {
         Image URL
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="image"
         type="text"
         placeholder="Image URL"
@@ -84,11 +86,11 @@ const AddBlogs = () => {
 
 {/* title */}
     <div className="mb-4">
-      <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">
+      <label className="block  text-gray-700 text-sm font-bold mb-2" htmlFor="title">
         Title
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="name"
         type="text"
         placeholder="Blog title"
@@ -102,7 +104,7 @@ const AddBlogs = () => {
         Category
       </label>
       <select
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="category"
         name="category"
       >
@@ -120,7 +122,7 @@ const AddBlogs = () => {
         Short Description
       </label>
       <textarea
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="short_description"
         placeholder="Short Description"
         name="short_description"
@@ -134,7 +136,7 @@ const AddBlogs = () => {
         Long Description
       </label>
       <textarea
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="long_description"
         placeholder="Long Description"
         name="long_description"
@@ -151,7 +153,7 @@ const AddBlogs = () => {
 
     <div className="flex items-center justify-between">
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
         type="submit"
       >
         Submit
@@ -161,6 +163,7 @@ const AddBlogs = () => {
 
   </form>
 </div>
+   </div>
   
         </div>
         </div>

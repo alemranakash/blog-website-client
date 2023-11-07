@@ -60,15 +60,17 @@ const UpdateBlogs = () => {
       <div>
         <div className="">
           <h1 className="text-center text-4xl my-10">Update Blog</h1>
-          <div className="max-w-md mx-auto">
-            <form onSubmit={handleUpdateProduct} className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+         <div className="flex">
+          <img className="flex-1" src="https://i.ibb.co/dP4yYcV/update.png" alt="" />
+         <div className="w-full mx-auto flex-1">
+            <form onSubmit={handleUpdateProduct} className=" shadow-2xl hover:shadow-cyan-600 rounded px-8 pt-6 pb-8 mb-4">
               {/* img */}
               <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="image">
                   Image URL
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="image"
                   type="text"
                   placeholder="Image URL"
@@ -83,7 +85,7 @@ const UpdateBlogs = () => {
                   Title
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="name"
                   type="text"
                   placeholder="Blog title"
@@ -98,7 +100,7 @@ const UpdateBlogs = () => {
                   Category
                 </label>
                 <select
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="category"
                   name="category"
                   defaultValue={category} 
@@ -117,7 +119,7 @@ const UpdateBlogs = () => {
                   Short Description
                 </label>
                 <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="short_description"
                   placeholder="Short Description"
                   name="short_description"
@@ -132,7 +134,7 @@ const UpdateBlogs = () => {
                   Long Description
                 </label>
                 <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="long_description"
                   placeholder="Long Description"
                   name="long_description"
@@ -143,7 +145,7 @@ const UpdateBlogs = () => {
 
               <div className="flex items-center justify-between">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                   type="submit"
                 >
                   Update
@@ -151,6 +153,7 @@ const UpdateBlogs = () => {
               </div>
             </form>
           </div>
+         </div>
         </div>
       </div>
     </div>

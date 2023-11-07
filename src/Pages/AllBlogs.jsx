@@ -71,14 +71,14 @@ const AllBlogs = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center">This is All Blogs</h1>
-      <div className="flex items-center justify-between">
-        <div className="mb-4 flex justify-center items-center gap-5">
+      <h1 className="text-4xl text-center my-10">This is All Blogs</h1>
+      <div className="flex items-center justify-between mb-10">
+        <div className="mb-5 flex justify-center items-center gap-5">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">
-            Filter by Category:
+            Filter by Category :
           </label>
           <select
-            className="shadow appearance-none border rounded w-fit py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border-2 rounded w-fit py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-black "
             id="category"
             name="category"
             value={selectedCategory}
@@ -94,10 +94,10 @@ const AllBlogs = () => {
         </div>
         <div className="mb-4 flex justify-center items-center gap-5">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="search">
-            Search
+            Search : 
           </label>
           <input
-            className="shadow appearance-none border rounded w-fit py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border-2 border-black  rounded w-fit py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="search"
             type="text"
             placeholder="Search by title"
@@ -113,19 +113,19 @@ const AllBlogs = () => {
           const { title, image, short_description, category, _id } = blog;
           return (
             <div key={_id}>
-              <div className="card lg:card-side bg-blue-200 shadow-xl">
-                <figure className="p-4">
-                  <img className="rounded-lg w-full h-full" src={image} alt="Blog" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="font-bold text-xl text-blue-700">{title}</h2>
-                  <h2 className="border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl">{category}</h2>
-                  <h2 className="">{short_description}</h2>
+              <div className="card lg:card-side shadow-xl my-5">
+              <img className=" w-1/2 mr-5  " src={image} alt="Blog" />
+              <div className='flex'>
+                <div className="lg:border-l-4 mb-10  border-black ml"></div>
+              <div className="card-body">
+                  <h2 className="font-bold text-xl text-black">{title}</h2>
+                  <h2 className="border-l-2 border-r-2 border-black text-blue-500  w-fit px-2">{category}</h2>
+                  <h2 className="my-5">{short_description}</h2>
 
-                  <div className="card-actions justify-end">
+                  <div className="card-actions ">
                     <div className="flex justify-center items-center gap-5">
                       <button
-                        className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                        className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                         onClick={() => navigate(`/blogDetails/${_id}`)}
                       >
                         Details
@@ -133,7 +133,7 @@ const AllBlogs = () => {
                     </div>
                     <div className="flex justify-center items-center gap-5">
                       <button
-                        className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                        className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                         onClick={() => handleAddToWishlist(blog)}
                       >
                         Wishlist
@@ -141,6 +141,7 @@ const AllBlogs = () => {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           );

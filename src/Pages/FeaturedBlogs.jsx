@@ -77,7 +77,7 @@ const columns = [
   return (
  <div>
    <h1 className="text-4xl text-center my-10">Featured Blogs</h1>
-     <div className="featured-blogs">
+     <div className="featured-blogs ">
       <DataTable
         title=""
         columns={columns}

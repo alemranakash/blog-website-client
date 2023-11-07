@@ -85,42 +85,43 @@ const WishList = () => {
 
   return (
     <div>
-      <h1>This is Wishlist</h1>
+      <h1 className="text-4xl text-center my-10">My Wishlist</h1>
       {isRemainingLoading ? (
-        <div>Loading remaining wishlist items...</div>
+        <div >Loading remaining wishlist items...</div>
       ) : filteredWishList.length === 0 ? (
         <div>No data found.</div>
       ) : (
         filteredWishList.map((blog) => {
           const { title, image, short_description, _id, detailsId, email } = blog;
           return (
-            <div key={_id}>
-              <div className="card lg:card-side bg-blue-200 shadow-xl">
-                <figure className="p-4">
-                  <img className="rounded-lg w-full h-full" src={image} alt="Blog" />
-                </figure>
+            <div  key={_id}>
+              <div className="card lg:card-side mb-20 shadow-lg">
+               
+               <img className="rounded-lg lg:w-1/3" src={image} alt="Blog" />
+              
                 <div className="card-body">
-                  <h2 className="font-bold text-xl text-blue-700">{title}</h2>
-                  <h2 className="border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl">
+                  <h2 className="font-bold text-xl text-black">{title}</h2>
+                  <h2 className="border-l-2 border-r-2 border-black text-blue-500  w-fit px-2">
                     {blog.category}
                   </h2>
-                  <h2 className="">{short_description}</h2>
-                  <h2 className="">{email}</h2>
-                  <div className="card-actions justify-end">
+                  <h2 className="my-5">{short_description}</h2>
+                  
+                  <div className="card-actions">
                     <div className="flex justify-center items-center gap-5">
                       <button
-                        className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                        className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                         onClick={() => navigate(`/blogDetails/${detailsId}`)}
                       >
                         Details
                       </button>
                     </div>
+                    
                     <div className="flex justify-center items-center gap-5">
                       <button
-                        className="btn btn-secondary my-2 btn-sm hover-bg-black hover-text-white"
+                        className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
                         onClick={() => handleRemoveFromWishList(_id)}
                       >
-                        Remove from Wishlist
+                        Remove from Wishlist ✖
                       </button>
                     </div>
                   </div>

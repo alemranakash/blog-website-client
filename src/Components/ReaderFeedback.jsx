@@ -45,7 +45,9 @@ const ReaderFeedback = () => {
 
   return (
    <div className='mb-10'>
-     <h1 className='text-4xl text-center my-20'>Reader Feedback</h1>
+     <h1 className='text-4xl text-center mt-20 mb-5'>Reader Feedback</h1>
+     <div className="border-b-4 text-center w-72 mb-20 mx-auto border-black">
+  </div>
      <div className="reader-feedback-container flex lg:flex-row-reverse  flex-col justify-center items-center  p-4  rounded-lg shadow-lg">
    <div className='flex flex-row-reverse flex-1'>
    <img src="https://i.ibb.co/tzhByZC/feedback.png" alt="" />

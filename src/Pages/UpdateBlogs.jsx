@@ -60,7 +60,7 @@ const UpdateBlogs = () => {
       <div>
         <div className="">
           <h1 className="text-center text-4xl my-10">Update Blog</h1>
-         <div className="flex">
+         <div className="flex lg:flex-row flex-col-reverse">
           <img className="flex-1" src="https://i.ibb.co/dP4yYcV/update.png" alt="" />
          <div className="w-full mx-auto flex-1">
             <form onSubmit={handleUpdateProduct} className=" shadow-2xl hover:shadow-cyan-600 rounded px-8 pt-6 pb-8 mb-4">
@@ -74,6 +74,7 @@ const UpdateBlogs = () => {
                   id="image"
                   type="text"
                   placeholder="Image URL"
+                  required
                   name="image"
                   defaultValue={image} 
                 />
@@ -89,6 +90,7 @@ const UpdateBlogs = () => {
                   id="name"
                   type="text"
                   placeholder="Blog title"
+                  required
                   name="title"
                   defaultValue={title} 
                 />
@@ -122,6 +124,7 @@ const UpdateBlogs = () => {
                   className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="short_description"
                   placeholder="Short Description"
+                  required
                   name="short_description"
                   rows="3"
                   defaultValue={short_description}  
@@ -137,6 +140,7 @@ const UpdateBlogs = () => {
                   className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="long_description"
                   placeholder="Long Description"
+                  required
                   name="long_description"
                   rows="3"
                   defaultValue={long_description}  

@@ -74,13 +74,15 @@ const RecentBlogs = () => {
   return (
     <div>
       <div>
-        <h1 className='text-4xl text-center my-20'>Recent Blogs</h1>
+        <h1 className='text-4xl text-center mt-20 mb-5'>Recent Blogs</h1>
+        <div className="border-b-4 text-center w-56 mb-20 mx-auto border-black">
+  </div>
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
           {data.map((blog) => {
             const { title, image, short_description, category, _id, createdAt } = blog;
             return (
               <div key={_id}>
-                <div className="card lg:card-side bg-slat-300 mb-10">
+                <div className="card lg:card-side bg-slat-300 mb-10 hover:shadow-2xl hover:shadow-black">
                 <div className="border-l-2 border-black">
   
 </div>

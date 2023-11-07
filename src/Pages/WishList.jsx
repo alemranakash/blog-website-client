@@ -85,7 +85,9 @@ const WishList = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center my-10">My Wishlist</h1>
+      <h1 className="text-4xl text-center mt-10 mb-5">My Wishlist</h1>
+      <div className="border-b-4 text-center w-56 mb-10 mx-auto border-black">
+  </div>
       {isRemainingLoading ? (
         <div >Loading remaining wishlist items...</div>
       ) : filteredWishList.length === 0 ? (
@@ -95,7 +97,7 @@ const WishList = () => {
           const { title, image, short_description, _id, detailsId } = blog;
           return (
             <div  key={_id}>
-              <div className="card lg:card-side mb-20 shadow-lg">
+              <div className="card lg:card-side mb-20 shadow-lg hover:shadow-2xl hover:shadow-black">
                
                <img className="rounded-lg lg:w-1/3" src={image} alt="Blog" />
               

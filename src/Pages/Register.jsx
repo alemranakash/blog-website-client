@@ -87,45 +87,47 @@ logOut()
                     <h1 className="text-3xl mt-10 text-center">Please register Here</h1>
                     <div className="mx-auto justify-center flex mt-10">
 
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                      <div className="flex lg:flex-row flex-col-reverse justify-center items-center">
+<img className="flex-1 lg:w-1/4" src="https://i.ibb.co/mJktPXw/login.png" alt="" />
+                      <div className="card flex-1 flex-shrink-0 w-full shadow-2xl hover:shadow-blue-500 bg-base-100">
+<form onSubmit={handleRegister} className="shadow-2xl hover:shadow-cyan-600 rounded px-8 pt-6 pb-8 mb-4">
 
-                            <form onSubmit={handleRegister} className="card-body">
-
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Name</span>
-                                    </label>
-                                    <input type="text" name="name" placeholder="Name" className="input rounded-md input-bordered" required />
-                                </div>
-
-
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Photo Url</span>
-                                    </label>
-                                    <input type="text" name="photoUrl" placeholder="Photo URL" className="input rounded-md input-bordered" required />
-                                </div>
+    <div className="form-control">
+        <label className="label">
+            <span className="label-text">Name</span>
+        </label>
+        <input type="text" name="name" placeholder="Name" className="input rounded-md input-bordered" required />
+    </div>
 
 
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="email" name="email" placeholder="email" className="input rounded-md input-bordered" required />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input type="password" placeholder="password" name="password" className="input rounded-md input-bordered" required />
+    <div className="form-control">
+        <label className="label">
+            <span className="label-text">Photo Url</span>
+        </label>
+        <input type="text" name="photoUrl" placeholder="Photo URL" className="input rounded-md input-bordered" required />
+    </div>
 
-                                </div>
-                                <div className="form-control mt-6">
-                                    <button className="btn rounded-md    hover:hover:border-blue-700 hover:text-blue-700 bg-blue-700 text-white">Register</button>
-                                </div>
-                                <h1 className="text-center">Already have an account ? <Link to={"/login"} className="text-blue-500 font-bold">Login Here</Link></h1>
-                            </form>
-                        </div>
+
+    <div className="form-control">
+        <label className="label">
+            <span className="label-text">Email</span>
+        </label>
+        <input type="email" name="email" placeholder="email" className="input rounded-md input-bordered" required />
+    </div>
+    <div className="form-control">
+        <label className="label">
+            <span className="label-text">Password</span>
+        </label>
+        <input type="password" placeholder="password" name="password" className="input rounded-md input-bordered" required />
+
+    </div>
+    <div className="form-control mt-6">
+        <button className="btn rounded-md    hover:hover:border-blue-700 hover:text-blue-700 bg-blue-700 text-white">Register</button>
+    </div>
+    <h1 className="text-center">Already have an account ? <Link to={"/login"} className="text-blue-500 font-bold">Login Here</Link></h1>
+</form>
+</div>
+                      </div>
                     </div>
                 </div>
             </div>

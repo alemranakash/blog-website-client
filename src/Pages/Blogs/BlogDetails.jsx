@@ -77,7 +77,9 @@ const BlogDetails = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center my-10">Blog Details</h1>
+      <h1 className="text-4xl text-center mt-10 mb-5">Blog Details</h1>
+      <div className="border-b-4 text-center w-56 mb-10 mx-auto border-black">
+  </div>
       <div className="card lg:card-side bg-blue-20 shadow-x mt-20 mb-10">
         <figure className="mr-20">
           <img className="rounded-lg w-full h-full" src={image} alt="Blog" />

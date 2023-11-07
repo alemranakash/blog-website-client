@@ -64,10 +64,12 @@ const AddBlogs = () => {
     return (
         <div>
             <div className=''>
-            <h1 className="text-center text-4xl my-10">Add Blog</h1>
-   <div className="flex justify-center items-center my-10">
-    <img className="" src="https://i.ibb.co/87m17ZT/add-blog.png" alt="" />
-   <div className="shadow-2xl hover:shadow-purple-600 rounded-md w-1/2 mx-auto ">
+            <h1 className="text-center text-4xl mt-10 mb-5">Add Blog</h1>
+            <div className="border-b-4 text-center w-56 mb-10 mx-auto border-black">
+  </div>
+   <div className="flex lg:flex-row flex-col-reverse justify-center items-center my-10">
+    <img className="" src="https://i.ibb.co/wwfc0RJ/register.png" alt="" />
+   <div className="shadow-2xl hover:shadow-purple-600 rounded-md lg:w-1/2 mx-auto ">
   <form onSubmit={handleFormSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
     
     {/* img */}
@@ -80,6 +82,7 @@ const AddBlogs = () => {
         id="image"
         type="text"
         placeholder="Image URL"
+        required
         name="image"
       />
     </div>
@@ -94,6 +97,7 @@ const AddBlogs = () => {
         id="name"
         type="text"
         placeholder="Blog title"
+        required
         name="title"
       />
     </div>
@@ -107,6 +111,7 @@ const AddBlogs = () => {
         className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="category"
         name="category"
+
       >
         <option value="Technology">Technology</option>
         <option value="Education">Education</option>
@@ -125,6 +130,7 @@ const AddBlogs = () => {
         className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="short_description"
         placeholder="Short Description"
+        required
         name="short_description"
         rows="3"
       ></textarea>
@@ -139,6 +145,7 @@ const AddBlogs = () => {
         className="shadow border-gray-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="long_description"
         placeholder="Long Description"
+        required
         name="long_description"
         rows="3"
       ></textarea>

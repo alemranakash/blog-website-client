@@ -50,7 +50,9 @@ const QuizSection = () => {
 
   return (
   <div>
-    <h1 className='text-4xl text-center my-20'>Quiz Game</h1>
+    <h1 className='text-4xl text-center mt-20 mb-5'>Quiz Game</h1>
+    <div className="border-b-4 text-center w-56 mb-20 mx-auto border-black">
+  </div>
       <div className="quiz-section flex flex-col my-10 lg:flex-row justify-center items-center gap-32 text-white p-6 rounded-lg shadow-lg">
        <div className='flex flex-1'>
        <img className='mr-5' src="https://i.ibb.co/tHt3xgy/q-a-removebg-preview.png" alt="" />

@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 
+
+
 const fetchAllWishList = async () => {
   try {
     const response = await axios.get('http://localhost:5000/wishList' , { withCredentials: true });
@@ -138,3 +140,5 @@ const WishList = () => {
 };
 
 export default WishList;
+
+

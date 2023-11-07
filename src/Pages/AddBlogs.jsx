@@ -52,6 +52,8 @@ const AddBlogs = () => {
        
      });
 
+     e.target.reset();
+
     }
 
 

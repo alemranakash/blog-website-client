@@ -82,7 +82,7 @@ const RecentBlogs = () => {
             const { title, image, short_description, category, _id, createdAt } = blog;
             return (
               <div key={_id}>
-                <div className="card lg:card-side bg-slat-300 mb-10 hover:shadow-2xl hover:shadow-black">
+                <div className="card lg:card-side bg-slat-300 mb-10 shadow-md hover:shadow-2xl hover:shadow-black">
                 <div className="border-l-2 border-black">
   
 </div>

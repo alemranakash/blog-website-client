@@ -84,7 +84,7 @@ const Login = () => {
     <div className="form-control mt-6">
       <button className="btn rounded-md   hover:border-black hover:text-black bg-black text-white">Login</button>
     </div>
-    <button onClick={handleGoogleLogin} className="btn btn-sm btn-outline w-fit mx-auto mt-2 rounded-md">Login with google</button>
+    <button onClick={handleGoogleLogin} className="btn flex btn-sm btn-outline w-fit mx-auto my-4 rounded-md">Login with google</button>
     <h1 className="text-center">Have no account ? <Link to={"/register"} className="text-black font-bold hover:underline">Register Here</Link></h1>
   </form>
 </div>

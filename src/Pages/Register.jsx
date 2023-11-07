@@ -122,9 +122,9 @@ logOut()
 
     </div>
     <div className="form-control mt-6">
-        <button className="btn rounded-md    hover:hover:border-blue-700 hover:text-blue-700 bg-blue-700 text-white">Register</button>
+        <button className="btn rounded-md   hover:border-black hover:text-black bg-black text-white">Register</button>
     </div>
-    <h1 className="text-center">Already have an account ? <Link to={"/login"} className="text-blue-500 font-bold">Login Here</Link></h1>
+    <h1 className="text-center my-4">Already have an account ? <Link to={"/login"} className="text-black font-bold">Login Here</Link></h1>
 </form>
 </div>
                       </div>

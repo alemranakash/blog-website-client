@@ -75,14 +75,17 @@ const columns = [
   
 
   return (
-    <div className="featured-blogs">
+ <div>
+   <h1 className="text-4xl text-center my-10">Featured Blogs</h1>
+     <div className="featured-blogs">
       <DataTable
-        title="Featured Blogs"
+        title=""
         columns={columns}
         data={tableData}
         pagination
       />
     </div>
+ </div>
   );
 };
 

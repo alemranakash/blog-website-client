@@ -29,7 +29,7 @@ const BlogDetails = () => {
       });
   }, [id, blogs]);
 
-  const { title, image, short_description, long_description, category, blogOwnerEmail, _id } = blogDetails;
+  const { title, image, short_description, long_description, category, blogOwnerEmail, _id, createdAt, blogOwnerName, blogOwnerPhoto } = blogDetails;
   const isOwner = userEmail === blogOwnerEmail;
 
   const handleFormSubmit = (e) => {
@@ -77,32 +77,43 @@ const BlogDetails = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center">Blog Details</h1>
-      <div className="card lg:card-side bg-blue-200 shadow-xl my-20">
-        <figure className="p-4">
+      <h1 className="text-4xl text-center my-10">Blog Details</h1>
+      <div className="card lg:card-side bg-blue-20 shadow-x mt-20 mb-10">
+        <figure className="mr-20">
           <img className="rounded-lg w-full h-full" src={image} alt="Blog" />
         </figure>
-        <div className="card-body">
-          <h2 className="font-bold text-xl text-blue-700">{title}</h2>
-          <h2 className="border-red-500 text-red-500 border-[1px] w-fit px-2 rounded-xl">
+      <div className="lg:border-l-4 mb-10  border-black ml">
+      <div className="card-body">
+          <h2 className='font-bold text-4xl text-black'>{title}</h2>
+          <p className="text-black text-sm"><span className="text-gray-500">Posted on: </span>  {new Date(createdAt).toLocaleString()}</p>
+          <div className="">
+          
+         <div className="flex flex-row-reverse items-center gap-5 justify-center ">
+         <p className="text-lg font-semibold">{blogOwnerName}</p>
+          <img className="w-10 rounded-full" src={blogOwnerPhoto} alt="" />
+         </div>
+          </div>
+          <h2 className='border-l-2 border-r-2 mt-5 border-black text-blue-500  w-fit px-2 '>
             {category}
           </h2>
           <h2>{short_description}</h2>
-          <p>{long_description}</p>
+         
           {isOwner && (
            <Link to={`/updateBlogs/${_id}`}>
-           <button className="btn">Update</button>
+           <button className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black">Update</button>
            </Link>
           )}
         </div>
       </div>
+      </div>
+      <p className="mb-20">{long_description}</p>
       <div className="mb-4">
-        <form onSubmit={handleFormSubmit} className="bg-blue-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <label className="block text-gray-700 text-2xl font-bold mb-4" htmlFor="comment">
+        <form onSubmit={handleFormSubmit} className="bg-blue-10 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <label className="block text-gray-900 text-2xl font-bold mb-4" htmlFor="comment">
             Add your Comment here:
           </label>
           <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border-2 mb-4 border-black rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
             id="comment"
             placeholder="Comments"
             name="comment"
@@ -110,7 +121,7 @@ const BlogDetails = () => {
           ></textarea>
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="btn btn-sm rounded-md border-black   hover:bg-black hover:text-white bg-none text-black"
               type="submit"
             >
               Comment

@@ -89,7 +89,7 @@ const RecentBlogs = () => {
                   <div className="lg:card-body justify-center mx-auto">
                     <h2 className='font-bold text-xl text-black'>{title}</h2>
                     <p className="text-gray-500 text-sm">{new Date(createdAt).toLocaleString()}</p>
-                    <h2 className='border-l-2 border-r-2 border-black text-blue-500  w-fit px-2 '>{category}</h2>
+           <h2 className='border-l-2 border-r-2 border-black text-blue-500  w-fit px-2 '>{category}</h2>
                     <h2 className='mb-5'>{short_description}</h2>
                    
                     <div className="card-actions">
@@ -108,7 +108,7 @@ const RecentBlogs = () => {
   className="btn btn-sm rounded-md border-black  hover:bg-black hover:text-white bg-none text-black"
   onClick={() => handleAddToWishlist(blog)}
 >
-  Wishlist
+  Wishlist 🖤
 </button>
                       </div>
                     </div>

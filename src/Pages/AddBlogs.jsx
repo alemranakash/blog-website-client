@@ -30,7 +30,7 @@ const AddBlogs = () => {
 
 
      axios
-     .post('http://localhost:5000/allBlogs', addBlogs, {
+     .post('https://blog-website-server-steel.vercel.app/allBlogs', addBlogs, {
        headers: {
          'Content-Type': 'application/json',
        },

@@ -1,6 +1,6 @@
-Website name: ``
+Website name: `Sarkari Blog`
 
-Live Link: ``
+Live Link: `https://blog-website-fb267.web.app/`
 
 ##  Project features and funtionalities 
 
@@ -16,7 +16,10 @@ The website has a cool Featured Blogs page where it shows the top 10 blog posts.
 - `4. Blog Management:`
 Users have the power to make and change their blogs using the "Add Blog" and "Update Blog" pages. Each blog comes with a title, a picture, short and long descriptions, and a place for people to leave comments. This means users can share their thoughts on blogs, and their comments are connected to both the blog they're talking about and the person who wrote the blog. It's a way for users to have conversations and share their opinions on the website.
 
-- `5. User Authentication and JWT Security:`
+- `5. Quiz Game and Readers Feedback:`
+There are two extra sections in Homepage. Quiz Game and Readers Feedback. Users can participate in a quiz, consisting of three questions. If they successfully answer all three questions, they become eligible for a surprise reward. In the Reader Feedback section, allowing users to provide feedback on our website's blog content. Users have the option to submit feedback anonymously if they wish to conceal their identity.
+
+- `6. User Authentication and JWT Security:`
 Users can create accounts and log in with their email and password, making their information secure. They can also choose to log in using a social account like Facebook, GitHub, or Google. When users are logged in, they can access special parts of the website, and they won't get kicked out when they refresh the page, thanks to a special security method called JWT. Plus, pop-up messages called "Sweet Alert" will let users know when they've done something successfully or if there's an error, like when they log in or do other things on the website. It's a way to keep things safe and let users know what's happening.
 
 

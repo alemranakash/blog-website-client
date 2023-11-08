@@ -9,7 +9,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const fetchAllWishList = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/wishList' , { withCredentials: true });
+    const response = await axios.get('https://blog-website-server-steel.vercel.app/wishList' , { withCredentials: true });
     return response.data;
   } catch (error) {
     throw new Error('Network response was not ok');
@@ -56,7 +56,7 @@ const WishList = () => {
     }).then((result) => {
       if (result) {
         axios
-          .delete(`http://localhost:5000/wishList/${blogId}` , { withCredentials: true })
+          .delete(`https://blog-website-server-steel.vercel.app/wishList/${blogId}` , { withCredentials: true })
           .then((response) => {
             if (response.data.deletedCount > 0) {
               swal({

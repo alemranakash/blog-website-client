@@ -4,7 +4,7 @@
 
 // const FeaturedBlogs = () => {
 //   const fetchFeaturedBlogs = async () => {
-//     const response = await axios.get("http://localhost:5000/allBlogs");
+//     const response = await axios.get("https://blog-website-server-steel.vercel.app/allBlogs");
 //     return response.data;
 //   };
 
@@ -92,7 +92,7 @@ import DataTable from "react-data-table-component";
 
 const FeaturedBlogs = () => {
   const fetchFeaturedBlogs = async () => {
-    const response = await axios.get("http://localhost:5000/allBlogs");
+    const response = await axios.get("https://blog-website-server-steel.vercel.app/allBlogs");
     return response.data;
   };
 

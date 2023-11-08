@@ -8,7 +8,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 const fetchAllBlogs = async () => {
-  const response = await fetch('http://localhost:5000/recentBlogs?sortBy=createdAt:asc&limit=6');
+  const response = await fetch('https://blog-website-server-steel.vercel.app/recentBlogs?sortBy=createdAt:asc&limit=6');
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
@@ -47,7 +47,7 @@ const RecentBlogs = () => {
     console.log(wishlistBlogs);
 
 
-    axios.post('http://localhost:5000/wishList', wishlistBlogs)
+    axios.post('https://blog-website-server-steel.vercel.app/wishList', wishlistBlogs)
       .then((response) => {
         if (response.data.insertedId) {
           swal({

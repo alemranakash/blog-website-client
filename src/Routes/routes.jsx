@@ -10,13 +10,13 @@ import WishList from "../Pages/WishList";
 import PrivateRoutes from "./PrivateRoutes";
 import BlogDetails from "../Pages/Blogs/BlogDetails";
 import UpdateBlogs from "../Pages/UpdateBlogs";
-// import ErrorPage from "../Pages/Errorpage";
+import ErrorPage from "../Pages/Errorpage";
 
 const routes = createBrowserRouter([
     {
         path: "/",
     element: <Root></Root>,
-    // errorElement: <ErrorPage></ErrorPage> ,
+    errorElement: <ErrorPage></ErrorPage> ,
     children:[
         {
             path: "/",
@@ -49,12 +49,12 @@ const routes = createBrowserRouter([
           {
             path: "/blogDetails/:id",
             element: <PrivateRoutes><BlogDetails></BlogDetails></PrivateRoutes>,
-            loader: ()=>fetch('http://localhost:5000/allBlogs'),
+            loader: ()=>fetch('https://blog-website-server-steel.vercel.app/allBlogs'),
           },
           {
             path: "/updateBlogs/:id",
             element: <PrivateRoutes><UpdateBlogs></UpdateBlogs></PrivateRoutes>,
-            loader: ({params})=> fetch(`http://localhost:5000/allBlogs/${params.id}`)
+            loader: ({params})=> fetch(`https://blog-website-server-steel.vercel.app/allBlogs/${params.id}`)
           },
 
     ]

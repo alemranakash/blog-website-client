@@ -33,7 +33,7 @@ const UpdateBlogs = () => {
       dangerMode: true,
     }).then((result) => {
       if (result) {
-        axios.put(`http://localhost:5000/allBlogs/${_id}`, updatedBlog, {
+        axios.put(`https://blog-website-server-steel.vercel.app/allBlogs/${_id}`, updatedBlog, {
           headers: {
             'Content-Type': 'application/json',
           },

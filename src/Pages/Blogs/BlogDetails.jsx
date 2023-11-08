@@ -20,7 +20,7 @@ const BlogDetails = () => {
     setBlogDetails(findBlogDetails);
 
     // Step 2: Fetch comment data when the component mounts
-    axios.get('http://localhost:5000/allComments')
+    axios.get('https://blog-website-server-steel.vercel.app/allComments')
       .then((response) => {
         setComments(response.data);
       })
@@ -56,7 +56,7 @@ const BlogDetails = () => {
 
 
     axios
-      .post('http://localhost:5000/allComments', addComment, {
+      .post('https://blog-website-server-steel.vercel.app/allComments', addComment, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -1,6 +1,6 @@
 Website name: `Sarkari Blog`
 
-Live Link: `https://blog-website-fb267.web.app/`
+Live Link: `https://conscious-hospital.surge.sh/`
 
 ##  Project features and funtionalities 
 
